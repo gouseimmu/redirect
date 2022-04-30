@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login page</h1>
+    <form>
+        <input type="email" placeholder="enter email" id="email"/>
+        <input type="password" placeholder="enter password" id="password"/>
+        <input type="submit" value="signin"/>
+    </form>
+    <p>Don't have an account <a href="signup.html">signup</a></p>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",login);
+    var out = JSON.parse(localStorage.getItem("userdata")) || [];
+    function login(){
+        event.preventDefault();
+        var data = {
+            email:document.querySelector("#email").value,
+            password:document.querySelector("#password").value,
+        }
+
+        if(email.value =="" || password.value=="")
+        {
+            alert("Enter email Id and Password");
+        }
+        else if(email.value != out.email || password.value != out.password)
+        {
+            alert("Please enter valid email Id and password");
+        }
+        else{
+            alert("Login Successful");
+            window.location.href="mens.html"
+        }
+         
+    }
+</script>
